@@ -1,0 +1,61 @@
+type WalkerId = nat;
+type Walker = 
+ record {
+   availability: vec Time;
+   experience: text;
+   id: WalkerId;
+   name: text;
+ };
+type Time = int;
+type Result_2 = 
+ variant {
+   err: text;
+   ok: BookingId;
+ };
+type Result_1 = 
+ variant {
+   err: text;
+   ok: vec Time;
+ };
+type Result = 
+ variant {
+   err: text;
+   ok;
+ };
+type ClientId = nat;
+type Client = 
+ record {
+   dogBreed: opt text;
+   dogName: text;
+   id: ClientId;
+   name: text;
+ };
+type BookingStatus = 
+ variant {
+   cancelled;
+   completed;
+   scheduled;
+ };
+type BookingId = nat;
+type Booking = 
+ record {
+   clientId: ClientId;
+   duration: nat;
+   id: BookingId;
+   status: BookingStatus;
+   time: Time;
+   walkerId: WalkerId;
+ };
+service : {
+  addWalker: (text, text) -> (WalkerId);
+  cancelBooking: (BookingId) -> (Result);
+  createBooking: (ClientId, WalkerId, Time, nat) -> (Result_2);
+  getBooking: (BookingId) -> (opt Booking) query;
+  getClient: (ClientId) -> (opt Client) query;
+  getWalker: (WalkerId) -> (opt Walker) query;
+  getWalkerAvailability: (WalkerId) -> (Result_1) query;
+  listBookings: () -> (vec Booking) query;
+  listWalkers: () -> (vec Walker) query;
+  registerClient: (text, text, opt text) -> (ClientId);
+  updateWalkerAvailability: (WalkerId, vec Time) -> (Result);
+}
