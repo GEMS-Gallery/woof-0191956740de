@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.paw-print-background {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="%23f0f0f0" d="M28.5 45.5q4.5-3.5 2-8t-7-2.5q-4.5 2-2 7t7 3.5zm20 0q4.5-3.5 2-8t-7-2.5q-4.5 2-2 7t7 3.5zm20 0q4.5-3.5 2-8t-7-2.5q-4.5 2-2 7t7 3.5zm-30 20q4.5-3.5 2-8t-7-2.5q-4.5 2-2 7t7 3.5zm20 0q4.5-3.5 2-8t-7-2.5q-4.5 2-2 7t7 3.5z"/></svg>');
+  background-repeat: repeat;
+  background-size: 100px 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0.1;
+}
