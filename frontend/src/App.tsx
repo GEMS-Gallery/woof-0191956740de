@@ -23,15 +23,13 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <div className="paw-print-background">
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/walkers" element={<WalkerList />} />
-          <Route path="/book" element={<BookingForm />} />
-          <Route path="/register" element={<ClientRegistration />} />
-        </Routes>
-      </div>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/walkers" element={<WalkerList />} />
+        <Route path="/book" element={<BookingForm />} />
+        <Route path="/register" element={<ClientRegistration />} />
+      </Routes>
     </ThemeProvider>
   );
 }
